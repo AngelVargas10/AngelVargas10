@@ -1,0 +1,94 @@
+.title{
+    text-align: center;
+    color: dodgerblue;
+    width: auto;
+    height: auto;
+    background-color: #900C3F;
+    padding: 8px;
+    border-radius: 10px;
+}
+body{
+    background-color: #1a3462;
+}
+.subtitulo{
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 5px;
+}
+label{
+    font-size: 20px;
+    font-family: cursive;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: cadetblue;
+    margin: 10px;
+    border:5px solid #900C3F;
+}
+input{
+    display: none;
+}
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+button{
+    margin-top: 30px;
+    background-color:transparent;
+    color: white;
+    border-radius: 20px;
+    border: 2px solid black;
+    width: 180px;
+    height: 40px;
+}
+#selecionar_mascota{
+    height: 80vh;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.texto{
+    color: white;
+    font-size: 20px;
+}
+#h2{
+    display: flex;
+    color: azure;
+    font-size: 2rem;
+    justify-content: center;
+}
+.tarjetas img{
+    width: 80px;
+}
+#mensajes{
+    color: antiquewhite;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    padding: 20px;
+    background: pink;
+    border-radius: 20px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+}
+#selecionar_ataque{
+    flex-direction: column;
+    align-items: center;
+}
+#reiniciar{
+    font-family: cursive;
+}
+
+
+@media (max-width:375px) {
+    .tarjetas{
+        flex-direction: column;
+    }
+    #e_a{
+        display:flex;
+        flex-direction: column;
+    }
+}
