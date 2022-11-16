@@ -83,7 +83,7 @@ button{
 }
 
 
-@media (max-width:375px) {
+@media (max-width:475px) {
     .tarjetas{
         flex-direction: column;
     }
