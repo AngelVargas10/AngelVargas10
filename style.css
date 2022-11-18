@@ -28,6 +28,9 @@ label{
 input{
     display: none;
 }
+input:checked + label{
+    background-color: aliceblue;
+}
 .tarjetas{
     display: flex;
     gap: 10px;
@@ -91,4 +94,11 @@ button{
         display:flex;
         flex-direction: column;
     }
+}
+.vidas{
+    font-size: 2rem;
+}
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px
 }

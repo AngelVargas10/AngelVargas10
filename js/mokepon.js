@@ -1,3 +1,16 @@
+const selecionarAtaque =document.getElementById("selecionar_ataque")
+const reinicio =document.getElementById("reiniciar")
+const botonMascotaJugador=document.getElementById("boton-mascosta")
+const boton_fuego= document.getElementById("boton-fuego")
+const boton_agua = document.getElementById("boton-agua")
+const boton_tierra=document.getElementById("boton-tierra")
+const boton_reiniciar = document.getElementById("reiniciar")
+const selecionarMascota =document.getElementById("selecionar_mascota")
+
+const sectionMensaje=document.getElementById("resultado")
+const ataquesDelJugador=document.getElementById("ataques-Del-Jugador")
+const ataquesDelEnemigo=document.getElementById("ataques-Del-Enemigo")
+
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
    }
@@ -17,25 +30,19 @@ function seleccionarMascotaJugador() {
     if (document.getElementById("hipodoge").checked ==true) {
         document.getElementById("name_pet").innerHTML="Hipodogue"
         mascotaEnemiga()
-        let selecionarMascota =document.getElementById("selecionar_mascota")
         selecionarMascota.style.display="none"
-        let selecionarAtaque =document.getElementById("selecionar_ataque")
         selecionarAtaque.style.display="flex"
     }
     else if (document.getElementById("capipepo").checked ==true) {
         document.getElementById("name_pet").innerHTML="Capipepo "
         mascotaEnemiga()
-        let selecionarMascota =document.getElementById("selecionar_mascota")
         selecionarMascota.style.display="none"
-        let selecionarAtaque =document.getElementById("selecionar_ataque")
         selecionarAtaque.style.display="flex"
     }
     else if (document.getElementById("ratigueya").checked ==true) {
         document.getElementById("name_pet").innerHTML="Ratigueya "
         mascotaEnemiga()
-        let selecionarMascota =document.getElementById("selecionar_mascota")
         selecionarMascota.style.display="none"
-        let selecionarAtaque =document.getElementById("selecionar_ataque")
         selecionarAtaque.style.display="flex"
     }
     else{
@@ -65,20 +72,9 @@ function ataqueEnemigo() {
     crearMensaje()
 }
 function iniciarJuego() {
-    let selecionarAtaque =document.getElementById("selecionar_ataque")
     selecionarAtaque.style.display="none"
-
-    let reinicio =document.getElementById("reiniciar")
     reinicio.style.display="none"
-
-
-    let botonMascotaJugador=document.getElementById("boton-mascosta")
     botonMascotaJugador.addEventListener("click",seleccionarMascotaJugador)
-
-    let boton_fuego= document.getElementById("boton-fuego")
-    let boton_agua = document.getElementById("boton-agua")
-    let boton_tierra=document.getElementById("boton-tierra")
-    let boton_reiniciar = document.getElementById("reiniciar")
 
     boton_reiniciar.addEventListener("click",reiniciarJuego)
     boton_agua.addEventListener("click",agua)
@@ -88,10 +84,7 @@ function iniciarJuego() {
 function crearMensaje() {
 
     revisarVidas()
-    let sectionMensaje=document.getElementById("resultado")
-    let ataquesDelJugador=document.getElementById("ataques-Del-Jugador")
-    let ataquesDelEnemigo=document.getElementById("ataques-Del-Enemigo")
-
+    
     let nuevoAtaqueDelJugador = document.createElement("p")
     let nuevoAtaqueDelEnemigo = document.createElement("p")
     
@@ -144,19 +137,12 @@ function revisarVidas() {
 }
 function crearMensajeFinal(resultadoFinal) {
     let sectionMensaje=document.getElementById("resultado")
-
     let parrafo = document.createElement("p")
     parrafo.innerHTML=resultadoFinal
-
-    let boton_fuego= document.getElementById("boton-fuego")
-    let boton_agua = document.getElementById("boton-agua")
-    let boton_tierra=document.getElementById("boton-tierra")
-
     // Desavilita los botones
     boton_fuego.disabled=true
     boton_agua.disabled=true
     boton_tierra.disabled=true
-
 }
 function reiniciarJuego() {
     location.reload()
@@ -166,4 +152,18 @@ let vidas_enemigo=3
 let resultado
 let ataqueJugador
 let ataquesEnemigos
+
+class  Mokepon{
+    constructor(nombre,foto,vida){
+        this.nombre=nombre
+        this.foto=foto
+        this.vida=vida
+    }
+}
+
+let hipodoge =new Mokepon("Hipodoge","./mokepons_mokepon_hipodoge_attack.webp",5)
+let capipepo =new Mokepon("capipepo","./mokepons_mokepon_capipepo_attack.webp",5)
+let ratigueya=new Mokepon("ratigueya","./mokepons_mokepon_ratigueya_attack.png",5)
+
+
 window.addEventListener("load",iniciarJuego)
