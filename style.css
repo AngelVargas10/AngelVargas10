@@ -8,7 +8,9 @@
     border-radius: 10px;
 }
 body{
-    background-color: #1a3462;
+   background-color: white; /* blanco */
+  background-color: rgb(255, 0, 0); /* rojo */
+  background-color: hsl(240, 100%, 50%); /* azul */
 }
 .subtitulo{
     background-color: aqua;
